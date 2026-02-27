@@ -97,6 +97,14 @@ app.get('/test', (request, response) => {
     response.end('<h3>The End.</h3>');
 })
 
+// Rolling a Dice 1-6
+app.get('/roll-dice', (request, response) => {
+	console.log('Calling "/roll-dice" on the Node.js server.')
+	const diceRoll = Math.floor(Math.random() * 6) + 1
+	response.type('text/plain')
+	response.send(diceRoll.toString())
+})
+
 // Return Batman as JSON.
 const batMan = {
 	"firstName":"Bruce",
